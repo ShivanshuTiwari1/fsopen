@@ -1,0 +1,35 @@
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+note over browser:
+browser executes spa.js 
+end note
+note over browser:
+'onload' event is triggered
+which sets up custom handler for form-submit event
+end note
+note over browser:
+browser sends a request for JSON data to the server 
+end note
+
+
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: Notes data in JSON format
+
+note over browser:
+State of xhttp object is changed
+end note
+
+note over browser:
+Change of state triggers 'onreadystatechange' event
+end note
+
+note over browser:
+Event handler adds the notes extracted from json data to the display
+end note

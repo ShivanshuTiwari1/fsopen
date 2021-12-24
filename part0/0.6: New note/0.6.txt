@@ -1,0 +1,31 @@
+note over browser:
+'onsubmit' event is triggered
+end note
+
+note over browser:
+handler prevents the default action i.e. GET request
+end note
+
+note over browser:
+new note is created with contents extracted from the form
+date is added through in-built function/constructor
+end note
+
+note over browser:
+notes array stored on the client side is updated with the new note
+input field in the form is cleared
+end note
+
+note over browser:
+all the notes rendered prior to the submission are removed from the display
+and notes contained in the array are rendered
+end note
+
+
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+notes stored on the server is updated with the new note
+end note
+server-->browser: JSON data informing success of the operation
+

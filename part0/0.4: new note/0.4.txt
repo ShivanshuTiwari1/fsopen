@@ -1,0 +1,40 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+
+note over server:
+Note is recieved in the body of the request object.
+end note
+
+note over server:
+notes object on the server is updated
+end note
+
+server-->browser: URL-redirect to /exampleapp/notes
+
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser executes main.js 
+and sends a request for JSON data to the server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: Notes data in JSON format
+
+note over browser:
+State of xhttp object is changed
+end note
+
+note over browser:
+Change of state triggers 'onreadystatechange' event
+end note
+
+note over browser:
+Event handler adds the notes extracted from json data to the display
+end note
